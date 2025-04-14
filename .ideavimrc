@@ -1,0 +1,98 @@
+" =============== Leader Key ================
+let mapleader=" "
+
+" =============== Plugins (Used & Useful) ================
+set easymotion              " Jump anywhere quickly
+set relativenumber          " Relative line numbers for movement
+set NERDTree                " File explorer
+set textobj-entire          " Select entire buffer with 'ae' or 'ie'
+set surround                " Edit surrounding characters easily
+set commentary              " Toggle comments with gc
+set argtextobj              " Treat function arguments as text objects (ia, aa)
+set vim-highlightedyank     " Highlight yanked text visually
+
+" Plugin config
+let g:argtextobj_pairs = "[:],(:),<:>"
+
+" =============== Vim Settings ================
+set showmode
+set so=5
+set incsearch
+set relativenumber
+
+" Use relative numbers for jump counts (5j, 3k, etc.)
+nnoremap <C-n> <Plug>NextWholeOccurrence
+
+" =============== EasyMotion Mappings ================
+nnoremap <leader>f <Plug>(easymotion-s)      " Jump to char
+nnoremap <leader>e <Plug>(easymotion-f)      " Jump forward to char
+
+" =============== IntelliJ Vim ================
+set ideajoin
+set ideastatusicon=green
+
+" =============== IntelliJ Actions ================
+" --- Project Navigation ---
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>s :action SelectInProjectView<CR>
+nnoremap <leader>o :action FileStructurePopup<CR>
+
+" --- Docs & Inspection ---
+nnoremap <leader>k :action QuickJavaDoc<CR>
+nnoremap <leader>K :action ExternalJavaDoc<CR>
+nnoremap <leader>p :action ParameterInfo<CR>
+nnoremap <leader>i :action QuickDefinition<CR>
+
+" --- Git ---
+nnoremap <leader>a :action Annotate<CR>
+nnoremap <leader>h :action Vcs.ShowTabbedFileHistory<CR>
+nnoremap <leader>l :action Vcs.ShowLog<CR>
+
+" --- Breakpoints / Debug ---
+nnoremap <leader>b :action ToggleLineBreakpoint<CR>
+nnoremap <leader>d :action Debug<CR>
+nnoremap <leader>c :action Stop<CR>
+
+" --- Editing & Refactor ---
+nnoremap <leader>r :action RenameElement<CR>
+nnoremap <leader>/ :action CommentByLineComment<CR>
+nnoremap <S-Space> :action GotoNextError<CR>
+
+" --- Testing & Code Execution ---
+nnoremap <leader>t :action RunContextTest<CR>            " Run test under cursor
+nnoremap <leader>T :action DebugContextTest<CR>          " Debug test under cursor
+nnoremap <leader>p :action Run<CR>                        " Run current config
+nnoremap <leader>P :action Debug<CR>                      " Debug current config
+
+" --- Jumping / Nav ---
+nnoremap <leader>j :action GotoDeclaration<CR>
+nnoremap <leader>J :action GotoImplementation<CR>
+nnoremap <Tab>     :action NextTab<CR>
+nnoremap <S-Tab>   :action PreviousTab<CR>
+
+" =============== Quality of Life ================
+nnoremap <leader>w :w<CR>     " Save
+nnoremap <leader>q :q<CR>     " Quit
+
+" =============== REMINDERS ================
+
+" --- Surround.vim ---
+" ys<motion><char>   → add surround (e.g. ysiw" → "word")
+" cs<old><new>       → change surround (e.g. cs"' → 'word')
+" ds<char>           → delete surround (e.g. ds" → word)
+
+" --- Commentary.vim ---
+" gcc                → toggle comment line
+" gc<motion>         → toggle comment for range (e.g. gc3j)
+" gcG                → comment to end of file
+
+" --- ArgTextObj ---
+" ia / aa            → inner or around function argument (e.g. dia to delete arg)
+
+" --- Textobj-entire ---
+" ie / ae            → inner/around entire buffer (e.g. vie to visually select all)
+
+" --- EasyMotion ---
+" <leader>f          → jump to char (anywhere)
+" <leader>e          → jump forward to char
+
