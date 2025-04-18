@@ -24,8 +24,8 @@ set relativenumber
 nnoremap <C-n> <Plug>NextWholeOccurrence
 
 " =============== EasyMotion Mappings ================
-nnoremap <leader>f <Plug>(easymotion-s)      " Jump to char
-nnoremap <leader>e <Plug>(easymotion-f)      " Jump forward to char
+map <leader>f <Plug>(easymotion-s)
+map <leader>e <Plug>(easymotion-f)
 
 " =============== IntelliJ Vim ================
 set ideajoin
@@ -38,10 +38,10 @@ nnoremap <leader>s :action SelectInProjectView<CR>
 nnoremap <leader>o :action FileStructurePopup<CR>
 
 " --- Docs & Inspection ---
-nnoremap <leader>k :action QuickJavaDoc<CR>
-nnoremap <leader>K :action ExternalJavaDoc<CR>
-nnoremap <leader>p :action ParameterInfo<CR>
-nnoremap <leader>i :action QuickDefinition<CR>
+map <leader>k :action QuickJavaDoc<CR>
+map <leader>K :action ExternalJavaDoc<CR>
+"map <leader>p :action ParameterInfo<CR>
+map <leader>i :action QuickDefinition<CR>
 
 " --- Git ---
 nnoremap <leader>a :action Annotate<CR>
@@ -95,4 +95,3 @@ nnoremap <leader>q :q<CR>     " Quit
 " --- EasyMotion ---
 " <leader>f          → jump to char (anywhere)
 " <leader>e          → jump forward to char
-
