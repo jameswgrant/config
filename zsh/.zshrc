@@ -32,6 +32,15 @@ alias glg='git lg'
 alias gundo='git restore --staged --worktree'
 alias reload='source ~/.zshrc'
 
+# Prompt: show VCS branch info when available.
+autoload -Uz vcs_info
+if ! (( ${precmd_functions[(Ie)vcs_info]} )); then
+  precmd_functions+=(vcs_info)
+fi
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '(%b) '
+PROMPT='${vcs_info_msg_0_}%~ % '
+
 if [ -f "$HOME/.zshrc.local" ]; then
   source "$HOME/.zshrc.local"
 fi
